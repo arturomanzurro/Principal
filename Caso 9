@@ -1,0 +1,58 @@
+    public static int indicepotenciamoto(MotosAcuaticas motocicletas2[]){
+    int potencia;
+    int indicem=0;
+    
+    potencia=motocicletas2[0].getPotencia();
+    for(int i=1;i>motocicletas2.length;i++){
+        if(motocicletas2[i].getPotencia()>potencia){
+           potencia=motocicletas2[i].getPotencia();
+           indicem=i;
+        }
+    }
+    return indicem;
+    }
+    
+    
+           
+     case'9':
+         Scanner entrada4 = new Scanner (System.in);
+         int potencia , nummotosacuaticas,indicepotencia;
+         String llantas;
+         System.out.println("Por favor ingrese el numero de motos acuaticas que desea: ");
+         nummotosacuaticas= entrada4.nextInt();
+         MotosAcuaticas motocicletas2[] = new MotosAcuaticas[nummotosacuaticas];
+         for(int i=0;i<nummotosacuaticas;i++){
+           entrada4.nextLine();
+           System.out.println("Digite las caracteristicas de la Moto Acuatica "+(i+1)+":");
+           System.out.print("\n"+"Introdusca la Marca de la moto: ");
+           marcaMoto=entrada4.nextLine();
+           System.out.print("Introdusca el Modelo de la moto: ");
+           modeloMoto=entrada4.nextLine();
+           System.out.print("Introdusca el color de moto: ");
+           colorMoto=entrada4.nextLine();
+           System.out.print("Introdusca el precio de la moto: ");
+           precioMoto=entrada4.nextInt();
+           System.out.print("Introdusca el año de la moto: ");
+           anhoMoto=entrada4.nextInt();
+           System.out.print("Introdusca la potencia de la Moto");
+           potencia=entrada4.nextInt();
+           System.out.print("La moto tiene llantas?? ");
+           llantas=entrada4.nextLine();
+           motocicletas2[i]=new MotosAcuaticas( marcaMoto, modeloMoto, colorMoto, anhoMoto, precioMoto, potencia ,llantas);
+         } indicepotencia=indicepotenciamoto(motocicletas2);
+         System.out.println("\n" + "La moto con mas potencia en turbinas es: ");
+         System.out.println(motocicletas2[indicepotencia].mostrarDatos());
+         break;
+        case 'A':
+         System.out.println("Gracias regrese pronto");
+         salida=true;
+         break;
+     default:
+         System.out.println("Esa opción no existe");
+         break;
+        
+        
+    }
+      
+   }
+    }
